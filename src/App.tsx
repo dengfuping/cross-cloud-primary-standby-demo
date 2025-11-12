@@ -53,10 +53,20 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#fafafa] flex items-start justify-center p-4 sm:p-6 overflow-auto">
-      <div ref={containerRef} className="w-full max-w-[940px]">
+      <div
+        ref={containerRef}
+        className="w-full max-w-[940px]"
+        style={{ position: "relative" }}
+      >
         {/* Tab 切换区域 */}
-        <div className="mb-6">
-          <div className="flex gap-[32px] border-b border-[#e8e8e8]">
+        <div
+          className="mb-6"
+          style={{ position: "absolute", width: "100%", zIndex: 10 }}
+        >
+          <div
+            className="flex gap-[32px] border-b border-[#e8e8e8]"
+            style={{ paddingTop: 16, paddingLeft: 24 }}
+          >
             <button
               onClick={() => setActiveTab("primary-backup")}
               className={`pb-[12px] transition-all relative ${

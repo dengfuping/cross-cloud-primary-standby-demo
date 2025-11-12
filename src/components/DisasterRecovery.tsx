@@ -9,7 +9,14 @@ import Group339 from "../imports/Group339";
 import Group340 from "../imports/Group340";
 import RegionFailure from "./RegionFailure";
 
-type VendorFailureState = "state1" | "state2" | "state3" | "state3-alt" | "state4" | "state5" | "state6";
+type VendorFailureState =
+  | "state1"
+  | "state2"
+  | "state3"
+  | "state3-alt"
+  | "state4"
+  | "state5"
+  | "state6";
 type DisasterScenario = "cloud-failure" | "region-failure";
 
 export default function DisasterRecovery() {
@@ -21,10 +28,12 @@ export default function DisasterRecovery() {
   useEffect(() => {
     if (state === "state2") {
       const timer = setTimeout(() => {
-        console.log("容灾切换 - 云厂商 - Auto transitioning from state2 to state3 after 2 seconds");
+        console.log(
+          "容灾切换 - 云厂商 - Auto transitioning from state2 to state3 after 2 seconds"
+        );
         setState("state3");
       }, 2000);
-      
+
       return () => clearTimeout(timer);
     }
   }, [state]);
@@ -32,19 +41,23 @@ export default function DisasterRecovery() {
   // 处理点击事件（仅用于云厂商故障场景）
   const handleStateChange = (event: React.MouseEvent) => {
     const target = event.target as HTMLElement;
-    
+
     // 检查是否点击了置灰按钮（不可点击按钮）
     let element: HTMLElement | null = target;
     while (element) {
       const classList = element.className || "";
       // 如果找到置灰按钮的特征类名，直接返回，不执行任何操作
-      if (typeof classList === 'string' && (classList.includes("bg-[#f3f6fc]") || classList.includes("cursor-not-allowed"))) {
+      if (
+        typeof classList === "string" &&
+        (classList.includes("bg-[#f3f6fc]") ||
+          classList.includes("cursor-not-allowed"))
+      ) {
         console.log("容灾切换 - 云厂商 - Clicked on disabled button, ignoring");
         return;
       }
       element = element.parentElement;
     }
-    
+
     // 检查是否点击了可操作按钮
     let checkElement: HTMLElement | null = target;
     let buttonId: string | null = null;
@@ -56,50 +69,69 @@ export default function DisasterRecovery() {
       }
       checkElement = checkElement.parentElement;
     }
-    
+
     const text = target.textContent || "";
-    console.log("容灾切换 - 云厂商 - Clicked:", text, "Button ID:", buttonId, "Current state:", state);
-    
+    console.log(
+      "容灾切换 - 云厂商 - Clicked:",
+      text,
+      "Button ID:",
+      buttonId,
+      "Current state:",
+      state
+    );
+
     // 状态1: 点击"切换为主实例"按钮 → 状态2
     if (state === "state1" && buttonId === "vendor-state1-button1") {
       console.log("容灾切换 - 云厂商 - State1 → State2");
       setState("state2");
       return;
     }
-    
+
     // 状态2: 不再自动切换，需要手动操作才能进入状态3
     // 这里可以根据需要添加从状态2到状态3的手动触发逻辑
-    
+
     // 状态3: 点击"创建跨云主备库"按钮 → 状态4
     if (state === "state3" && buttonId === "vendor-state3-button1") {
       console.log("容灾切换 - 云厂商 - State3 → State4");
       setState("state4");
       return;
     }
-    
+
     // 状态3: 点击"释放实例"按钮（杭州或上海） → 状态6（Group340）
-    if (state === "state3" && (buttonId === "vendor-state3-button2" || buttonId === "vendor-state3-button3")) {
+    if (
+      state === "state3" &&
+      (buttonId === "vendor-state3-button2" ||
+        buttonId === "vendor-state3-button3")
+    ) {
       console.log("容灾切换 - 云厂商 - State3 → State6 (释放实例)");
       setState("state6");
       return;
     }
-    
+
     // 状态3-alt: 点击"释放实例"按钮 → 状态6（Group340）
-    if (state === "state3-alt" && (buttonId === "vendor-state3-alt-button1" || buttonId === "vendor-state3-alt-button2")) {
+    if (
+      state === "state3-alt" &&
+      (buttonId === "vendor-state3-alt-button1" ||
+        buttonId === "vendor-state3-alt-button2")
+    ) {
       console.log("容灾切换 - 云厂商 - State3-alt → State6 (释放实例)");
       setState("state6");
       return;
     }
-    
+
     // 状态6: 点击"创建跨云主备库"按钮 → 状态5（Group339）
     if (state === "state6" && buttonId === "vendor-state6-button1") {
       console.log("容灾切换 - 云厂商 - State6 → State5 (创建跨云主备库)");
       setState("state5");
       return;
     }
-    
+
     // 状态4: 点击"释放实例"按钮 → 状态5
-    if (state === "state4" && (buttonId === "vendor-state4-button1" || buttonId === "vendor-state4-button2")) {
+    if (
+      state === "state4" &&
+      (buttonId === "vendor-state4-button1" ||
+        buttonId === "vendor-state4-button2")
+    ) {
       console.log("容灾切换 - 云厂商 - State4 → State5 (释放实例)");
       setState("state5");
       return;
@@ -141,13 +173,23 @@ export default function DisasterRecovery() {
         <button
           onClick={() => {
             setState("state1");
-            setResetTrigger(prev => prev + 1);
+            setResetTrigger((prev) => prev + 1);
           }}
           className="ml-2 p-1.5 hover:bg-gray-100 rounded transition-colors"
           title="重置"
         >
-          <svg className="w-4 h-4 text-[#595959]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          <svg
+            className="w-4 h-4 text-[#595959]"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+            />
           </svg>
         </button>
       </div>
@@ -156,8 +198,14 @@ export default function DisasterRecovery() {
       {scenario === "cloud-failure" ? (
         <div onClick={handleStateChange}>
           {/* 响应式容器 */}
-          <div className="relative w-full" style={{ paddingBottom: "92.55%" /* 870/940 比例 */ }}>
-            <div className="absolute inset-0 origin-top-left">
+          <div
+            className="relative w-full"
+            style={{ paddingBottom: "92.55%" /* 870/940 比例 */ }}
+          >
+            <div
+              className="absolute inset-0 origin-top-left"
+              style={state === "state1" ? { top: -30 } : {}}
+            >
               <div className="w-[940px] h-[870px] scale-[var(--scale)] origin-top-left">
                 {state === "state1" && <Group330 />}
                 {state === "state2" && <Group331 />}
