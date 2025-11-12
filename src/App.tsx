@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import PrimaryBackupSwitch from "./components/PrimaryBackupSwitch";
 import DisasterRecovery from "./components/DisasterRecovery";
 
@@ -7,10 +7,53 @@ type TabType = "primary-backup" | "disaster";
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabType>("primary-backup");
   const [primaryBackupResetTrigger] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // 动态计算并设置缩放比例
+  useEffect(() => {
+    const updateScale = () => {
+      if (containerRef.current) {
+        const container = containerRef.current;
+        const containerWidth = container.offsetWidth;
+        const baseWidth = 940;
+
+        // 如果容器宽度为0，延迟重试
+        if (containerWidth === 0) {
+          requestAnimationFrame(updateScale);
+          return;
+        }
+
+        const scale =
+          containerWidth >= baseWidth ? 1 : containerWidth / baseWidth;
+        container.style.setProperty("--scale", scale.toString());
+      }
+    };
+
+    // 使用 requestAnimationFrame 确保 DOM 已渲染
+    requestAnimationFrame(() => {
+      updateScale();
+    });
+
+    // 监听窗口大小变化
+    window.addEventListener("resize", updateScale);
+
+    // 使用 ResizeObserver 监听容器大小变化（更准确）
+    const resizeObserver = new ResizeObserver(() => {
+      requestAnimationFrame(updateScale);
+    });
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
+
+    return () => {
+      window.removeEventListener("resize", updateScale);
+      resizeObserver.disconnect();
+    };
+  }, [activeTab]); // 当切换tab时重新计算
 
   return (
     <div className="min-h-screen bg-[#fafafa] flex items-start justify-center p-4 sm:p-6 overflow-auto">
-      <div className="w-full max-w-[940px]">
+      <div ref={containerRef} className="w-full max-w-[940px]">
         {/* Tab 切换区域 */}
         <div className="mb-6">
           <div className="flex gap-[32px] border-b border-[#e8e8e8]">
@@ -53,22 +96,14 @@ export default function App() {
       </div>
 
       <style>{`
-        @media (max-width: 940px) {
-          .w-full.max-w-\\[940px\\] div[class*="scale-"] {
-            --scale: calc(min(100vw - 2rem, 940px) / 940) !important;
-          }
+        /* 确保所有使用 scale-[var(--scale)] 的元素都能正确应用 */
+        [class*="scale-\\[var\\(--scale\\)\\]"] {
+          transform-origin: top left;
         }
         
-        @media (min-width: 941px) {
-          .w-full.max-w-\\[940px\\] div[class*="scale-"] {
-            --scale: 1 !important;
-          }
-        }
-        
-        @media (max-width: 640px) {
-          .w-full.max-w-\\[940px\\] div[class*="scale-"] {
-            --scale: calc((100vw - 2rem) / 940) !important;
-          }
+        /* 默认缩放值为1，由JavaScript动态更新 */
+        .w-full.max-w-\\[940px\\] {
+          --scale: 1;
         }
       `}</style>
     </div>
