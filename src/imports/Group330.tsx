@@ -1676,7 +1676,7 @@ function Component03Comment() {
 
 export default function Group41() {
   return (
-    <div className="relative size-full">
+    <div className="relative size-full cloud-failure-state1">
       <Group39 />
       <div className="absolute bg-[#fff2f2] h-[404px] left-[24px] rounded-[4px] top-[446px] w-[588px]">
         <div

@@ -115,34 +115,13 @@ export default function App() {
         .w-full.max-w-\\[940px\\] {
           --scale: 1;
         }
-        
-        [class*="inset-[18.54%_84.58%_75.85%_11.49%]"] {
+        [data-name="Group"] {
           margin-top: -8px;
           margin-bottom: 8px;
         }
-        [class*="inset-[18.54%_52.24%_75.85%_43.83%]"] {
-          margin-top: -8px;
-          margin-bottom: 8px;
-        }
-        [class*="inset-[18.54%_20.43%_75.85%_75.64%]"] {
-          margin-top: -8px;
-          margin-bottom: 8px;
-        }
-        [class*="inset-[18.54%_20.44%_75.85%_75.64%]"] {
-          margin-top: -8px;
-          margin-bottom: 8px;
-        }
-        [class*="inset-[21.41%_84.58%_73.18%_11.49%]"] {
-          margin-top: -4px;
-          margin-bottom: 4px;
-        }
-        [class*="inset-[21.41%_52.24%_73.18%_43.83%]"] {
-          margin-top: -4px;
-          margin-bottom: 4px;
-        }
-        [class*="inset-[21.41%_20.43%_73.18%_75.64%]"] {
-          margin-top: -4px;
-          margin-bottom: 4px;
+        .cloud-failure-state1 [data-name="Group"] {
+          margin-top: -2px;
+          margin-bottom: 2px;
         }
       `}</style>
     </div>
