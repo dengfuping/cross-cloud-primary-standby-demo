@@ -800,7 +800,10 @@ function Frame2() {
 
 function Frame3() {
   return (
-    <div className="absolute bg-[#f8fafe] box-border content-stretch flex flex-col gap-[10px] inset-[35.85%_2.55%_59.02%_2.55%] items-center justify-center p-[10px] rounded-[4px]">
+    <div
+      className="absolute bg-[#f8fafe] box-border content-stretch flex flex-col gap-[10px] inset-[35.85%_2.55%_59.02%_2.55%] items-center justify-center p-[10px] rounded-[4px]"
+      style={{ marginBottom: 16, marginTop: -16 }}
+    >
       <div
         aria-hidden="true"
         className="absolute border border-[#e2e8f3] border-solid inset-0 pointer-events-none rounded-[4px]"
