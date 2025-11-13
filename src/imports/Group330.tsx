@@ -1142,7 +1142,10 @@ function Group29() {
           />
         </svg>
       </div>
-      <p className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[72.69%_38.3%_24.74%_55.74%] leading-[22px] not-italic text-[#191919] text-[14px]">
+      <p
+        className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[72.69%_38.3%_24.74%_55.74%] leading-[22px] not-italic text-[#191919] text-[14px]"
+        style={{ marginTop: -15 }}
+      >
         网络连接
       </p>
     </div>
@@ -1169,7 +1172,10 @@ function Group37() {
           />
         </svg>
       </div>
-      <p className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[72.69%_23.83%_24.74%_70.21%] leading-[22px] not-italic text-[#191919] text-[14px]">
+      <p
+        className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[72.69%_23.83%_24.74%_70.21%] leading-[22px] not-italic text-[#191919] text-[14px]"
+        style={{ marginTop: -15 }}
+      >
         网络连接
       </p>
     </div>
@@ -1628,75 +1634,6 @@ function Component04Tooltip() {
     >
       <TooltipCenter />
       <ArrowPositionScrubber />
-    </div>
-  );
-}
-
-function Component05Cursor() {
-  return (
-    <div
-      className="absolute h-[17.578px] left-[903px] top-[76px] w-[11.414px] hidden"
-      data-name="05-光标Cursor"
-    >
-      <div className="absolute inset-[-4.55%_-15.77%_-15.93%_-15.77%]">
-        <svg
-          className="block size-full"
-          fill="none"
-          preserveAspectRatio="none"
-          viewBox="0 0 16 22"
-        >
-          <g filter="url(#filter0_d_6_3307)" id="Group">
-            <path
-              d={svgPaths.pb675080}
-              fill="var(--fill-0, white)"
-              id="arrow border"
-            />
-            <path
-              clipRule="evenodd"
-              d={svgPaths.p27e3fc70}
-              fill="var(--fill-0, black)"
-              fillRule="evenodd"
-              id="arrow"
-            />
-          </g>
-          <defs>
-            <filter
-              colorInterpolationFilters="sRGB"
-              filterUnits="userSpaceOnUse"
-              height="21.1785"
-              id="filter0_d_6_3307"
-              width="15.0142"
-              x="0"
-              y="0"
-            >
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feColorMatrix
-                in="SourceAlpha"
-                result="hardAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              />
-              <feOffset dy="1" />
-              <feGaussianBlur stdDeviation="0.9" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.65 0"
-              />
-              <feBlend
-                in2="BackgroundImageFix"
-                mode="normal"
-                result="effect1_dropShadow_6_3307"
-              />
-              <feBlend
-                in="SourceGraphic"
-                in2="effect1_dropShadow_6_3307"
-                mode="normal"
-                result="shape"
-              />
-            </filter>
-          </defs>
-        </svg>
-      </div>
     </div>
   );
 }

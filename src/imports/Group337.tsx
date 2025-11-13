@@ -46,6 +46,7 @@ function Component() {
     <div
       className="absolute bg-[#0181fd] box-border content-stretch flex gap-[10px] h-[40px] items-center justify-center left-[calc(50%-320px)] px-[12px] py-[5px] rounded-[4px] top-[calc(50%+302px)] translate-x-[-50%] translate-y-[-50%] w-[130px] cursor-pointer hover:bg-[#0066cc] transition-colors"
       data-name="1.通用/1.按钮/2.次按钮/3.中号备份 4"
+      style={{ marginTop: -24 }}
     >
       <div className="flex flex-col font-['PingFang_SC:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[14px] text-center text-nowrap text-white">
         <p className="leading-[22px] whitespace-pre">创建跨云主备库</p>
@@ -460,7 +461,10 @@ function Group29() {
           />
         </svg>
       </div>
-      <p className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_38.3%_25.64%_55.74%] leading-[22px] not-italic text-[#191919] text-[14px]">
+      <p
+        className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_38.3%_25.64%_55.74%] leading-[22px] not-italic text-[#191919] text-[14px]"
+        style={{ marginTop: -36 }}
+      >
         网络连接
       </p>
     </div>
@@ -487,7 +491,10 @@ function Group38() {
           />
         </svg>
       </div>
-      <p className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_23.83%_25.64%_70.21%] leading-[22px] not-italic text-[#191919] text-[14px]">
+      <p
+        className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_23.83%_25.64%_70.21%] leading-[22px] not-italic text-[#191919] text-[14px]"
+        style={{ marginTop: -36 }}
+      >
         网络连接
       </p>
     </div>

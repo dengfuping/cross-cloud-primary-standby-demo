@@ -1067,7 +1067,10 @@ function Group27() {
           />
         </svg>
       </div>
-      <p className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_38.3%_25.64%_55.74%] leading-[22px] not-italic text-[#191919] text-[14px]">
+      <p
+        className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_38.3%_25.64%_55.74%] leading-[22px] not-italic text-[#191919] text-[14px]"
+        style={{ marginTop: -36 }}
+      >
         网络连接
       </p>
     </div>
@@ -1094,7 +1097,10 @@ function Group35() {
           />
         </svg>
       </div>
-      <p className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_23.83%_25.64%_70.21%] leading-[22px] not-italic text-[#191919] text-[14px]">
+      <p
+        className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_23.83%_25.64%_70.21%] leading-[22px] not-italic text-[#191919] text-[14px]"
+        style={{ marginTop: -36 }}
+      >
         网络连接
       </p>
     </div>

@@ -1719,7 +1719,10 @@ export default function Group46() {
         <div className="flex-none scale-y-[-100%]">
           <Group29 />
         </div>
-        <p className="absolute font-['PingFang_SC:Medium',sans-serif] leading-[22px] not-italic text-[#191919] text-[14px] whitespace-nowrap bg-white px-1 left-1/2 -translate-x-1/2">
+        <p
+          className="absolute font-['PingFang_SC:Medium',sans-serif] leading-[22px] not-italic text-[#191919] text-[14px] whitespace-nowrap bg-white px-1 left-1/2 -translate-x-1/2"
+          style={{ marginLeft: -70 }}
+        >
           网络连接
         </p>
       </div>
@@ -1727,7 +1730,10 @@ export default function Group46() {
         <div className="flex-none h-[16px] scale-y-[-100%] w-[62px]">
           <Group30 />
         </div>
-        <p className="absolute font-['PingFang_SC:Medium',sans-serif] leading-[22px] not-italic text-[#191919] text-[14px] whitespace-nowrap bg-white px-1 left-1/2 -translate-x-1/2">
+        <p
+          className="absolute font-['PingFang_SC:Medium',sans-serif] leading-[22px] not-italic text-[#191919] text-[14px] whitespace-nowrap bg-white px-1 left-1/2 -translate-x-1/2"
+          style={{ marginLeft: -70 }}
+        >
           网络连接
         </p>
       </div>

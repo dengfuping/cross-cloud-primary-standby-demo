@@ -785,7 +785,10 @@ function Group39() {
           />
         </svg>
       </div>
-      <p className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_47.02%_25.64%_47.02%] leading-[22px] not-italic text-[#191919] text-[14px]">
+      <p
+        className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_47.02%_25.64%_47.02%] leading-[22px] not-italic text-[#191919] text-[14px]"
+        style={{ marginTop: -36 }}
+      >
         网络连接
       </p>
     </div>
@@ -812,7 +815,10 @@ function Group40() {
           />
         </svg>
       </div>
-      <p className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_32.55%_25.64%_61.49%] leading-[22px] not-italic text-[#191919] text-[14px]">
+      <p
+        className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_32.55%_25.64%_61.49%] leading-[22px] not-italic text-[#191919] text-[14px]"
+        style={{ marginTop: -36 }}
+      >
         网络连接
       </p>
     </div>

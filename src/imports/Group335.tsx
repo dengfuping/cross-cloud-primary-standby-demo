@@ -227,79 +227,9 @@ function Frame10() {
   );
 }
 
-function Component05Cursor() {
-  return (
-    <div
-      className="absolute inset-[90.73%_82.72%_7.12%_16.06%] hidden"
-      data-name="05-光标Cursor"
-    >
-      <div className="absolute inset-[-4.55%_-15.77%_-15.93%_-15.77%]">
-        <svg
-          className="block size-full"
-          fill="none"
-          preserveAspectRatio="none"
-          viewBox="0 0 16 22"
-        >
-          <g filter="url(#filter0_d_7_6586)" id="Group">
-            <path
-              d={svgPaths.pb675080}
-              fill="var(--fill-0, white)"
-              id="arrow border"
-            />
-            <path
-              clipRule="evenodd"
-              d={svgPaths.p27e3fc70}
-              fill="var(--fill-0, black)"
-              fillRule="evenodd"
-              id="arrow"
-            />
-          </g>
-          <defs>
-            <filter
-              colorInterpolationFilters="sRGB"
-              filterUnits="userSpaceOnUse"
-              height="21.1785"
-              id="filter0_d_7_6586"
-              width="15.0142"
-              x="0"
-              y="0"
-            >
-              <feFlood floodOpacity="0" result="BackgroundImageFix" />
-              <feColorMatrix
-                in="SourceAlpha"
-                result="hardAlpha"
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-              />
-              <feOffset dy="1" />
-              <feGaussianBlur stdDeviation="0.9" />
-              <feColorMatrix
-                type="matrix"
-                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.65 0"
-              />
-              <feBlend
-                in2="BackgroundImageFix"
-                mode="normal"
-                result="effect1_dropShadow_7_6586"
-              />
-              <feBlend
-                in="SourceGraphic"
-                in2="effect1_dropShadow_7_6586"
-                mode="normal"
-                result="shape"
-              />
-            </filter>
-          </defs>
-        </svg>
-      </div>
-    </div>
-  );
-}
-
 function Group32() {
   return (
     <div className="absolute contents left-[138px] top-[733px]">
-      <Component05Cursor />
       <div
         className="absolute flex h-[calc(1px*((var(--transform-inner-width)*0.2797243595123291)+(var(--transform-inner-height)*0.9600803256034851)))] items-center justify-center left-[138px] top-[745px] w-[calc(1px*((var(--transform-inner-height)*0.2797243595123291)+(var(--transform-inner-width)*0.9600803256034851)))]"
         style={
@@ -1345,7 +1275,10 @@ function Group31() {
           />
         </svg>
       </div>
-      <p className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_38.3%_25.64%_55.74%] leading-[22px] not-italic text-[#191919] text-[14px]">
+      <p
+        className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_38.3%_25.64%_55.74%] leading-[22px] not-italic text-[#191919] text-[14px]"
+        style={{ marginTop: -36 }}
+      >
         网络连接
       </p>
     </div>
@@ -1372,7 +1305,10 @@ function Group40() {
           />
         </svg>
       </div>
-      <p className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_23.83%_25.64%_70.21%] leading-[22px] not-italic text-[#191919] text-[14px]">
+      <p
+        className="absolute font-['PingFang_SC:Medium',sans-serif] inset-[71.69%_23.83%_25.64%_70.21%] leading-[22px] not-italic text-[#191919] text-[14px]"
+        style={{ marginTop: -36 }}
+      >
         网络连接
       </p>
     </div>
