@@ -973,7 +973,7 @@ function Group30() {
 
 function Group33() {
   return (
-    <div className="absolute contents left-[108px] top-[152px] hidden">
+    <div className="absolute contents left-[108px] top-[152px]">
       <div className="absolute bg-[rgba(255,255,255,0)] h-[46px] left-[108px] top-[152px] w-[38px]" />
       <Group30 />
     </div>

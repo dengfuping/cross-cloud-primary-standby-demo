@@ -1332,7 +1332,7 @@ function Group30() {
 
 function Group33() {
   return (
-    <div className="absolute contents left-[711px] top-[152px] hidden">
+    <div className="absolute contents left-[711px] top-[152px]">
       <div className="absolute bg-[rgba(255,255,255,0)] h-[46px] left-[711px] top-[152px] w-[38px]" />
       <Group30 />
     </div>
@@ -1556,6 +1556,7 @@ export default function Group39() {
       <Group21 />
       <Group36 />
       <Group38 />
+      <Group34 />
       <Frame4 />
       <Frame9 />
       <Alert />

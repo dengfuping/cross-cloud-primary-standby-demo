@@ -515,7 +515,7 @@ function Group33() {
 
 function Group36() {
   return (
-    <div className="absolute contents left-[412px] top-[152px] hidden">
+    <div className="absolute contents left-[412px] top-[152px]">
       <div className="absolute bg-[rgba(255,255,255,0)] h-[46px] left-[412px] top-[152px] w-[38px]" />
       <Group33 />
     </div>
